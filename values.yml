@@ -1,0 +1,22 @@
+appName: simplehelm
+gitRepo:
+  gitProvider: githubInt                              # <-- replace with your GitRepo integration name
+  path: jfrog/jfrog-pipelines-helm-deploy-sample      # <-- replace jfrog with your username or org name
+  branch: main
+
+appImage:
+  registry: entArt                                    # <-- replace with your Artifactory integration name
+  registryUrl: "demo.jfrog-pipelines.com/cst-docker"             # <-- replace with the url to your Artifactory environment
+  repoName: cst-docker
+
+appChart:
+  sourceArtifactory: entArt                           # <-- replace with your Artifactory integration name
+  repoName: cst-helm
+
+runtime:
+  k8s_integration: coresvc_k8s                             # <-- replace with your Kubernetes integration name
+  namespace: coresvc                                # <-- replace with the name of the Kubernetes namespace where the Helm chart will be deployed
+  releaseName: simplehelm
+
+
+
